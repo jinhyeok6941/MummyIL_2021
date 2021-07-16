@@ -20,6 +20,9 @@ public class MummyAgent : Agent
     public override void Initialize()
     {
         MaxStep = 100;
+        rb = GetComponent<Rigidbody>();
+        tr = GetComponent<Transform>();
+
         rb.velocity = rb.angularVelocity = Vector3.zero;
     }
 
