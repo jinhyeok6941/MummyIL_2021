@@ -17,4 +17,17 @@ public class MummyAgent : Agent
 
     public Material goodMt, badMt;
 
+    public override void Initialize()
+    {
+        MaxStep = 100;
+        rb.velocity = rb.angularVelocity = Vector3.zero;
+    }
+
+    public override void OnEpisodeBegin()
+    {
+        tr.localPosition = new Vector3(0, 0.05f, -4.5f);
+        tr.localRotation = Quaternion.identity;
+        stageManager.InitStage();
+    }
+
 }
